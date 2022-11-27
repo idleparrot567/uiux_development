@@ -50,6 +50,7 @@ function App() {
       setCartItems([...cartItems, { ...product, qty: 1 }]);
     }
   };
+
   const onRemove = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist.qty === 1) {
@@ -62,12 +63,13 @@ function App() {
       );
     }
   };
+  
   return (
     <div className="App">
      <Header></Header>
      <div className='row'>
-     <Main onAdd = {onAdd} products={products}></Main>
-     <Basket onAdd = {onAdd} cartItems={cartItems}></Basket>
+     <Main onAdd = {onAdd} onRemove = {onRemove} products={products}></Main>
+     <Basket onAdd = {onAdd} onRemove = {onRemove} cartItems={cartItems}></Basket>
      </div>
     </div>
   );

@@ -8,7 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 export default function Product(props) {
-    const {product, onAdd} = props;
+    const {product, onAdd, onRemove} = props;
   return (
     <Card sx={{ maxWidth: 345 }}>
     <CardMedia
@@ -27,7 +27,7 @@ export default function Product(props) {
     </CardContent>
     <CardActions>
     <Button onClick= {() => {onAdd(product);}} variant="text">Add To Cart</Button>  
-      <Button onClick= {() => {onAdd(product);}} variant="text">Remove From Cart</Button>
+      <Button onClick= {() => {onRemove(product);}} variant="text">Remove From Cart</Button>
     </CardActions>
   </Card>
   );

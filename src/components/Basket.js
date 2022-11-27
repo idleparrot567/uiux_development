@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Basket(props){
-    const {cartItems, onAdd} = props;
+    const {cartItems, onAdd, onRemove} = props;
     const itemsLength = cartItems?.length || 0;
     return (
     <aside className='block col-1'>
