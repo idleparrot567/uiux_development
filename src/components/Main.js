@@ -1,5 +1,6 @@
 import Reacr from 'react';
 import Product from './Product';
+import Filter from './Filter';
  
 export default function Main(props){
     const {products, onAdd, onRemove} = props;

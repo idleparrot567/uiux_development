@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import Main from './components/Main';
+import Filter from './components/Filter';
 import Basket from './components/Basket';
 import {useState, useEffect} from 'react';
 
@@ -63,13 +64,13 @@ function App() {
       );
     }
   };
-  
+
   return (
     <div className="App">
      <Header></Header>
      <div className='row'>
      <Main onAdd = {onAdd} onRemove = {onRemove} products={products}></Main>
-     <Basket onAdd = {onAdd} onRemove = {onRemove} cartItems={cartItems}></Basket>
+     <Basket onAdd = {onAdd} onRemove = {onRemove} products ={products} cartItems={cartItems}></Basket>
      </div>
     </div>
   );

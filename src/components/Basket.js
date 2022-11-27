@@ -1,7 +1,8 @@
 import React from 'react';
+import Filter from './Filter';
 
 export default function Basket(props){
-    const {cartItems, onAdd, onRemove} = props;
+    const {cartItems, products, onAdd, onRemove} = props;
     const itemPrice = cartItems.reduce((a,c) => a + c.price * c.qty, 0);
     const taxPrice = itemPrice * 0.14;
     const shippingPrice = itemPrice > 2000 ? 0 : 50;
@@ -9,6 +10,8 @@ export default function Basket(props){
     const itemsLength = cartItems?.length || 0;
     return (
     <aside className='block col-1'>
+        <h2> Filter</h2>
+        <Filter productsLength = {products.length}> </Filter>
         <h2> Cart Items </h2>
         <div> {cartItems.length == 0 && <div>Cart is empty</div>}
         {cartItems.map((item) => (
