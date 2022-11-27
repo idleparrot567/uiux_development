@@ -22,7 +22,10 @@ export default function Product(props) {
         {product.name}
       </Typography>
       <Typography variant="body2" color="text.secondary">
-        {product.description}
+       {product.description}
+      </Typography>
+      <Typography variant="body3" color="text.secondary">
+       ${product.price} each, category: {product.category}
       </Typography>
     </CardContent>
     <CardActions>
