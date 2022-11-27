@@ -39,6 +39,8 @@ a {
 }
 .col-1 {
   flex: 1;
+  display: flex;
+  direction: column;
 }
 .col-2 {
   display: flex;
