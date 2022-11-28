@@ -1,65 +1,13 @@
 import React from 'react';
 import Filter from './Filter';
 
-import {useState, useEffect} from 'react';
-
 export default function Basket(props){
-    const {cartItems, products} = props;
+    const {cartItems, products, sortProducts, filterProducts, state} = props;
     const itemPrice = cartItems.reduce((a,c) => a + c.price * c.qty, 0);
     const taxPrice = itemPrice * 0.14;
-    const shippingPrice = itemPrice > 2000 ? 0 : 50;
+    const shippingPrice = itemPrice > 2000 ? 0 : 10;
     const totalPrice = itemPrice + taxPrice + shippingPrice;
     const itemsLength = cartItems?.length || 0;
-
-    //the filter/sort variables
-    const [state, setState] = useState({
-      products: products,
-      type:'',
-      sort:''
-    })
-
-    //function that uses for sorting the item
-  const sortProducts=(event)=>{
-    //implement
-    //console.log(event.target.value);
-    const sort = event.target.value;
-    console.log("before change sort",sort);
-    setState((state) => ({
-      sort: sort,
-      products: state.products.slice().sort((a,b) => (
-        sort === "lowest"?
-        ((a.price > b.price)? 1:-1):
-        sort === "highest"?
-        ((a.price < b.price)? 1:-1):
-        ((a.id > b.id)? 1:-1)
-      )),
-    }));
-  };
-  useEffect(() => { 
-    console.log("Updated states due to sort", state)
-  }, [state])
-
-  //function for filtering the products
-  const filterProducts=(event)=>{
-    //implement
-    const type = event.target.value
-    console.log(type);
-    if (event.target.value===""){
-      setState({type: type, products: products});
-    } else {
-      setState({
-        type: event.target.value,
-        products: products.filter(
-          (products) => products.category.indexOf(event.target.value) >=0
-        ),
-      });
-    }
-  };
-
-  useEffect(() => { 
-    console.log("Updated states due to filter", state)
-  }, [state])
-
     return (
     <aside className='block col-1'>
         <h2> Sort and Filter</h2>

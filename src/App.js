@@ -64,12 +64,65 @@ function App() {
       );
     }
   };
+  //------------------ filter and sort products functions -----------
+  //the filter/sort variables
+  const [state, setState] = useState({
+    products: products,
+    type:'',
+    sort:''
+  })
+  console.log(products);
+  
+  //function that uses for sorting the item
+const sortProducts=(event)=>{
+  //implement
+  //console.log(event.target.value);
+  const sort = event.target.value;
+  console.log("before change sort",sort);
+  setState((state) => ({
+    sort: sort,
+    products: state.products.slice().sort((a,b) => (
+      sort === "lowest"?
+      ((a.price > b.price)? 1:-1):
+      sort === "highest"?
+      ((a.price < b.price)? 1:-1):
+      ((a.id > b.id)? 1:-1)
+    )),
+  }));
+};
+useEffect(() => { 
+  console.log("Updated states due to sort", state)
+}, [state])
+
+//function for filtering the products
+const filterProducts=(event)=>{
+  //implement
+  const type = event.target.value
+  console.log(type);
+  if (event.target.value===""){
+    setState({type: type, products: products});
+  } else {
+    setState({
+      type: event.target.value,
+      products: products.filter(
+        (products) => products.category.indexOf(event.target.value) >=0
+      ),
+    });
+  }
+};
+useEffect(() => { 
+  console.log("Updated states due to filter", state)
+}, [state])
+
   return (
     <div className="App">
      <Header></Header>
      <div className='row'>
      <Main onAdd = {onAdd} onRemove = {onRemove} products={products}></Main>
-     <Basket onAdd = {onAdd} onRemove = {onRemove} products ={products} cartItems={cartItems}></Basket>
+     <Basket onAdd = {onAdd} onRemove = {onRemove} 
+     products ={products} cartItems={cartItems}
+     sortProducts = {sortProducts} filterProducts = {filterProducts}
+     state = {state}></Basket>
      </div>
     </div>
   );
