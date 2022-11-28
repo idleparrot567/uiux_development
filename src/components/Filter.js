@@ -4,10 +4,10 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-import {useState} from 'react';
-
 export default function Filter(props) {
-    const{type, sort, sortProducts, filterProducts,productslength} = props;
+    const{type, sort, sortProducts, filterProducts} = props;
+    console.log("type in filter component", type);
+    console.log("sort in filter component", sort);
 
   return (
        <div>
@@ -16,7 +16,7 @@ export default function Filter(props) {
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value={sort}
+          value={sort || ''}
           onChange={sortProducts}
           label="Baked Goods Type"
         >
@@ -32,7 +32,7 @@ export default function Filter(props) {
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value={type}
+          value={type || ''}
           onChange={filterProducts}
           defaultValue = ""
           label="Baked Goods Type"
