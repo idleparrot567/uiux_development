@@ -51,7 +51,7 @@ function App() {
       setCartItems([...cartItems, { ...product, qty: 1 }]);
     }
   };
-
+  //function that removes items
   const onRemove = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist.qty === 1) {
@@ -64,7 +64,6 @@ function App() {
       );
     }
   };
-
   return (
     <div className="App">
      <Header></Header>

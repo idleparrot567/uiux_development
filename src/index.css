@@ -27,7 +27,9 @@ a {
 .col-1 {
   display: flex;
   flex-direction: column;
+  justify-items: center;
   flex-wrap: wrap;
+  margin: 0.5rem;
   flex: 1;
 }
 .col-2 {
