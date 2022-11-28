@@ -4,7 +4,7 @@
     "description": "Four classic chocolate chip cookies",
     "price": 7.99,
     "image": "images/anika.png",
-    "category": "cookies"
+    "category": "Cookies"
   },
   {
     "id": 2,
@@ -12,7 +12,7 @@
     "description": "Layers of matcha crepe and matcha cream filling, topped with strawberries",
     "price": 4.99,
     "image": "images/aubrey.png",
-    "category": "desserts"
+    "category": "Cakes"
   },
   {
     "id": 3,
@@ -20,7 +20,7 @@
     "description": "A fluffy steamed bun with a savory egg filling",
     "price": 2.99,
     "image": "images/connie.png",
-    "category": "bread"
+    "category": "Breads"
   },
   {
     "id": 4,
@@ -28,7 +28,7 @@
     "description": "Two soft steamed buns filled with gooey purple taro filling",
     "price": 5.99,
     "image": "images/dylan.png",
-    "category": "bread"
+    "category": "Breads"
   },
   {
     "id": 5,
@@ -36,7 +36,7 @@
     "description": "A rich fudge brownie drizzled with chocolate ganache",
     "price": 3.99,
     "image": "images/isaac.png",
-    "category": "desserts"
+    "category": "Desserts"
   },
   {
     "id": 6,
@@ -44,7 +44,7 @@
     "description": "A box of three macarons in assorted flavors",
     "price": 4.99,
     "image": "images/jeff.png",
-    "category": "desserts"
+    "category": "Desserts"
   },
   {
     "id": 7,
@@ -52,7 +52,7 @@
     "description": "A loaf of fresh-baked multigrain bread",
     "price": 4.99,
     "image": "images/jenny.png",
-    "category": "bread"
+    "category": "Breads"
   },
   {
     "id": 8,
@@ -60,7 +60,7 @@
     "description": "A classic butter croissant with a flaky crust",
     "price": 2.99,
     "image": "images/jessie.png",
-    "category": "bread"
+    "category": "Breads"
   },
   {
     "id": 9,
@@ -68,7 +68,7 @@
     "description": "A slice of toast with a pat of butter",
     "price": 1.99,
     "image": "images/kelly.png",
-    "category": "bread"
+    "category": "Breads"
   },
   {
     "id": 10,
@@ -76,7 +76,7 @@
     "description": "A classic tiramisu with layers of coffee-soaked ladyfingers and mascarpone cream",
     "price": 3.99,
     "image": "images/lauren.png",
-    "category": "cakes"
+    "category": "Cakes"
   },
   {
     "id": 11,
@@ -84,7 +84,7 @@
     "description": "A flaky pastry shell filled with a sweet egg custard",
     "price": 2.99,
     "image": "images/melissa.png",
-    "category": "desserts"
+    "category": "Desserts"
   },
   {
     "id": 12,
@@ -92,7 +92,7 @@
     "description": "A toasted bagel with sesame seeds, poppy seeds, and dried onion",
     "price": 2.99,
     "image": "images/miku.png",
-    "category": "bread"
+    "category": "Breads"
   },
   {
     "id": 13,
@@ -100,7 +100,7 @@
     "description": "A soft gingerbread cookie with a sweet icing glaze",
     "price": 2.99,
     "image": "images/nick.png",
-    "category": "cookies"
+    "category": "Cookies"
   },
   {
     "id": 14,
@@ -108,7 +108,7 @@
     "description": "A slice of classic New York cheesecake topped with strawberry",
     "price": 3.99,
     "image": "images/sunny.png",
-    "category": "cakes"
+    "category": "Cakes"
   },
   {
     "id": 15,
@@ -116,6 +116,6 @@
     "description": "Light and airy pâte à choux filled with sweet whipped cream",
     "price": 2.99,
     "image": "images/tongyu.png",
-    "category": "desserts"
+    "category": "Desserts"
   }
 ]

@@ -23,8 +23,8 @@ export default function Filter(props) {
           <MenuItem value="">
             <em> Popular </em>
           </MenuItem>
-          <MenuItem value={10}> Highest </MenuItem>
-          <MenuItem value={20}> Lowest </MenuItem>
+          <MenuItem value={"Highest"}> Highest </MenuItem>
+          <MenuItem value={"Lowest"}> Lowest </MenuItem>
         </Select>
       </FormControl>
       <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
@@ -40,9 +40,10 @@ export default function Filter(props) {
           <MenuItem value="">
             <em>All</em>
           </MenuItem>
-          <MenuItem value={10}> Cakes</MenuItem>
-          <MenuItem value={20}> Desserts </MenuItem>
-          <MenuItem value={30}> Breads </MenuItem>
+          <MenuItem value={"Cakes"}> Cakes</MenuItem>
+          <MenuItem value={"Desserts"}> Desserts </MenuItem>
+          <MenuItem value={"Breads"}> Breads </MenuItem>
+          <MenuItem value={"Cookies"}> Cookies </MenuItem>
         </Select>
       </FormControl>
     </div>

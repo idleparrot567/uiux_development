@@ -1,6 +1,5 @@
 import Header from './components/Header';
 import Main from './components/Main';
-import Filter from './components/Filter';
 import Basket from './components/Basket';
 import {useState, useEffect} from 'react';
 
@@ -35,7 +34,12 @@ const theme = createTheme({
   });
 
 function App() {
-  const [products, setProducts] = useState(bakeryData);
+  // const [products, setProducts] = useState(bakeryData);
+  const [state, setState] = useState({
+    products: bakeryData,
+    type:'',
+    sort:''
+  })
   const [cartItems, setCartItems] = useState([]);
   // build a function that aggregates
   // using javascript dictionary
@@ -65,14 +69,8 @@ function App() {
     }
   };
   //------------------ filter and sort products functions -----------
-  //the filter/sort variables
-  const [state, setState] = useState({
-    products: products,
-    type:'',
-    sort:''
-  })
-  console.log(products);
-  
+
+
   //function that uses for sorting the item
 const sortProducts=(event)=>{
   //implement
@@ -82,9 +80,9 @@ const sortProducts=(event)=>{
   setState((state) => ({
     sort: sort,
     products: state.products.slice().sort((a,b) => (
-      sort === "lowest"?
+      sort === "Lowest"?
       ((a.price > b.price)? 1:-1):
-      sort === "highest"?
+      sort === "Highest"?
       ((a.price < b.price)? 1:-1):
       ((a.id > b.id)? 1:-1)
     )),
@@ -100,12 +98,12 @@ const filterProducts=(event)=>{
   const type = event.target.value
   console.log(type);
   if (event.target.value===""){
-    setState({type: type, products: products});
+    setState({type: type, products: bakeryData});
   } else {
     setState({
       type: event.target.value,
-      products: products.filter(
-        (products) => products.category.indexOf(event.target.value) >=0
+      products: bakeryData.filter(
+        (product) => product.category.includes(event.target.value)
       ),
     });
   }
@@ -118,9 +116,9 @@ useEffect(() => {
     <div className="App">
      <Header></Header>
      <div className='row'>
-     <Main onAdd = {onAdd} onRemove = {onRemove} products={products}></Main>
+     <Main onAdd = {onAdd} onRemove = {onRemove} products={state.products}></Main>
      <Basket onAdd = {onAdd} onRemove = {onRemove} 
-     products ={products} cartItems={cartItems}
+     products ={bakeryData} cartItems={cartItems}
      sortProducts = {sortProducts} filterProducts = {filterProducts}
      state = {state}></Basket>
      </div>
