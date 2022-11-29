@@ -17,11 +17,6 @@ export default function Header(props){
             <h1>The Idle Parrot's Bakery </h1>
         </a>
         </div>
-        <div>
-        <a href="#/">
-            <h1>Cart</h1>
-        </a>
-        </div>
 
 
     </header>

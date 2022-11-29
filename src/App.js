@@ -73,34 +73,43 @@ function App() {
 
   //function that uses for sorting the item
 const sortProducts=(event)=>{
-  //implement
-  //console.log(event.target.value);
   const sort = event.target.value;
-  console.log("before change sort",sort);
-  setState((state) => ({
-    sort: sort,
-    products: state.products.slice().sort((a,b) => (
-      sort === "Lowest"?
-      ((a.price > b.price)? 1:-1):
-      sort === "Highest"?
-      ((a.price < b.price)? 1:-1):
-      ((a.id > b.id)? 1:-1)
-    )),
-  }));
+  const type = state.type;
+  console.log("before change sort",event.target);
+  //first sort
+  const sorted = state.products.slice().sort((a,b) => (
+    sort === "Lowest"?
+    ((a.price > b.price)? 1:-1):
+    sort === "Highest"?
+    ((a.price < b.price)? 1:-1):
+    ((a.id > b.id)? 1:-1)
+  ));
+  console.log("sorted", sorted);
+  console.log("type after sorted", type);
+  //make sure the results are filtered as well
+  if (type===""){
+    setState({sort:sort, type: type, products: sorted});
+  } else {
+    setState({
+      sort: sort,
+      type: type,
+      products: sorted.filter(
+        (product) => product.category.includes(type)
+      ),
+    });
+  }
 };
-useEffect(() => { 
-  console.log("Updated states due to sort", state)
-}, [state])
 
 //function for filtering the products
 const filterProducts=(event)=>{
   //implement
   const type = event.target.value
-  console.log(type);
+  console.log("before change filter",event.target);
   if (event.target.value===""){
-    setState({type: type, products: bakeryData});
+    setState({sort: state.sort, type: state.type, products: bakeryData});
   } else {
     setState({
+      sort: state.sort,
       type: event.target.value,
       products: bakeryData.filter(
         (product) => product.category.includes(event.target.value)

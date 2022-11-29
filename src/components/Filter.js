@@ -16,7 +16,7 @@ export default function Filter(props) {
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value={sort || ''}
+          value={sort}
           onChange={sortProducts}
           label="Baked Goods Type"
         >
@@ -32,7 +32,7 @@ export default function Filter(props) {
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value={type || ''}
+          value={type}
           onChange={filterProducts}
           defaultValue = ""
           label="Baked Goods Type"
