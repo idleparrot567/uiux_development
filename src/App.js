@@ -103,19 +103,31 @@ const sortProducts=(event)=>{
 //function for filtering the products
 const filterProducts=(event)=>{
   //implement
-  const type = event.target.value
+  const type = event.target.value;
+  const sort = state.sort;
   console.log("before change filter",event.target);
+  const filtered = '';
+  //filter first
   if (event.target.value===""){
-    setState({sort: state.sort, type: state.type, products: bakeryData});
+     state.products = bakeryData;
   } else {
-    setState({
-      sort: state.sort,
-      type: event.target.value,
-      products: bakeryData.filter(
-        (product) => product.category.includes(event.target.value)
-      ),
-    });
+     state.products = bakeryData.filter(
+      (product) => product.category.includes(type));
   }
+  console.log("first filter,", filtered);
+
+  //then make sure the products are sorted as well
+  setState({
+    sort: state.sort,
+    type: type,
+    products: state.products.slice().sort((a,b) => (
+      sort === "Lowest"?
+      ((a.price > b.price)? 1:-1):
+      sort === "Highest"?
+      ((a.price < b.price)? 1:-1):
+      ((a.id > b.id)? 1:-1)
+    )),
+  });
 };
 useEffect(() => { 
   console.log("Updated states due to filter", state)
