@@ -1,7 +1,7 @@
 # Development
 
 ### Link to Deployed Website
-If you used the stencil code, this is `https://<your GitHub username>.github.io/<name of your repository>`
+`https://idleparrot567.github.io/uiux_development`
 
 ### Goal and Value of the Application
 The application is a bakery shop app that allows the users to purchase baked goods from a set menu.The app includes a sorting and filter mechanism that shows the users all the items in the shop in a price-descending or ascending orders. The mechanism also allows the page to exhibit items in a particular baked goods catergory (cakes, desserts and etc.). By adding the wanted items into the cart, the users can see the quantities of each goods they are purchasing and the final total price including the shipping costs. 
